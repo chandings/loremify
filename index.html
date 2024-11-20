@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Generate customizable Lorem Ipsum placeholder text online. Adjust words per sentence, sentences per paragraph, and number of paragraphs to create your desired text." />
+  <meta name="keywords" content="lorem ipsum generator, placeholder text generator, lorem ipsum online, customizable lorem ipsum" />
+  <meta property="og:title" content="Simple Lorem Ipsum Generator" />
+  <meta property="og:description" content="Generate customizable placeholder text online with our easy-to-use Lorem Ipsum generator." />
+  <meta property="og:image" content="https://yourwebsite.com/og-image.jpg" />
+  <meta property="og:url" content="https://yourwebsite.com" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Simple Lorem Ipsum Generator" />
+  <meta name="twitter:description" content="Generate customizable placeholder text online with our easy-to-use Lorem Ipsum generator." />
+  <meta name="twitter:image" content="https://yourwebsite.com/twitter-image.jpg" />
+  <link rel="canonical" href="https://yourwebsite.com" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <title>Simple Lorem Ipsum Generator - Generate Placeholder Text Online</title>
+</head>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .form-group {
+      display: flex; /* Use Flexbox for label and select alignment */
+      align-items: center; /* Align items vertically */
+      margin-bottom: 15px;
+    }
+
+    label {
+      flex: 1; /* Allow labels to take up equal space */
+      margin-right: 10px; /* Add spacing between label and select */
+      text-align: right; /* Align text to the right */
+    }
+
+    select {
+      flex: 2; /* Allow dropdowns to take more space */
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+	  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #generated-text-container {
+      position: relative;
+      margin-top: 20px;
+    }
+
+    #output {
+      background-color: #f9f9f9;
+	  border: 1px solid #ddd;
+	  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+      padding: 15px;
+      font-family: 'Courier New', Courier, monospace; /* Code-style font */
+      font-size: 14px;
+      line-height: 1.8;
+	  font-size: 16px;
+      overflow-x: auto; /* Enable horizontal scrolling for long text */
+      white-space: pre-wrap; /* Preserve spacing and wrap long text */
+    }
+
+    #copy-btn {
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  color: white; /* White text for contrast */
+  font-size: 12px;
+  width:50px;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0.8; /* Slight transparency for the button itself */
+  transition: opacity 0.3s ease; /* Smooth transition for hover effects */
+}
+
+#copy-btn:hover {
+  opacity: 1; /* Make fully visible on hover */
+}
+
+    .content {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .content-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+	.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #323232;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+}
+
+.toast.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.content .form-group:last-of-type {
+  margin-bottom: 30px; /* Add more space below the last form group */
+}
+
+@media (max-width: 768px) {
+  .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  label {
+    text-align: left;
+    margin-bottom: 5px;
+  }
+
+  select {
+    flex: unset;
+    width: 100%;
+  }
+}
+
+.subheading {
+  font-size: 1.2rem; /* Slightly smaller than the main heading */
+  font-weight: 400; /* Normal font weight */
+  color: #555; /* A soft gray for contrast */
+  text-align: center; /* Centered like the main heading */
+  margin-top: -10px; /* Bring it closer to the main heading */
+  margin-bottom: 20px; /* Add some space below the subheading */
+  line-height: 1.5; /* Slightly increased line height for readability */
+}
+
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <div class="content">
+      <h1>Simple Lorem Ipsum Generator</h1>
+<p class="subheading">Generate customizable placeholder text quickly and easily. Adjust the settings below to create your Lorem Ipsum text.</p>
+
+      <div class="form-group">
+        <label for="wordsPerSentence">Words per sentence:</label>
+        <select id="wordsPerSentence"></select>
+      </div>
+      <div class="form-group">
+        <label for="sentencesPerParagraph">Sentences per paragraph:</label>
+        <select id="sentencesPerParagraph"></select>
+      </div>
+      <div class="form-group">
+        <label for="paragraphs">Number of paragraphs:</label>
+        <select id="paragraphs"></select>
+      </div>
+      <button id="generate">Generate Lorem Ipsum</button>
+      <h2>Generated Text:</h2>
+      <div id="generated-text-container">
+        <button id="copy-btn">Copy</button>
+        <pre id="output"></pre>
+      </div>
+	  <div id="toast" class="toast hidden">Text copied to clipboard!</div>
+
+    </div>
+  </div>
+<footer style="text-align: center; margin-top: 40px; font-size: 0.9rem; color: #888;">
+  Built with ❤️
+</footer>
+
+  <script>
+    const loremWords = [
+      "Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing",
+      "elit", "sed", "do", "eiusmod", "tempor", "incididunt", "ut", "labore",
+      "et", "dolore", "magna", "aliqua", "Ut", "enim", "ad", "minim", "veniam",
+      "quis", "nostrud", "exercitation", "ullamco", "laboris", "nisi", "ut",
+      "aliquip", "ex", "ea", "commodo", "consequat", "Duis", "aute", "irure",
+      "dolor", "in", "reprehenderit", "in", "voluptate", "velit", "esse",
+      "cillum", "dolore", "eu", "fugiat", "nulla", "pariatur", "Excepteur",
+      "sint", "occaecat", "cupidatat", "non", "proident", "sunt", "in",
+      "culpa", "qui", "officia", "deserunt", "mollit", "anim", "id", "est",
+      "laborum"
+    ];
+
+    function populateSelectOptions(id, min, max, defaultValue) {
+      const select = document.getElementById(id);
+      for (let i = min; i <= max; i++) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.textContent = i;
+        if (i === defaultValue) {
+          option.selected = true; // Set default value
+        }
+        select.appendChild(option);
+      }
+    }
+
+    function generateLoremIpsum(wordsPerSentence, sentencesPerParagraph, paragraphCount) {
+      const paragraphs = [];
+      for (let p = 0; p < paragraphCount; p++) {
+        const sentences = [];
+        for (let s = 0; s < sentencesPerParagraph; s++) {
+          const words = [];
+          for (let w = 0; w < wordsPerSentence; w++) {
+            const word = loremWords[Math.floor(Math.random() * loremWords.length)];
+            words.push(word);
+          }
+          const sentence = words.join(" ");
+          sentences.push(sentence.charAt(0).toUpperCase() + sentence.slice(1) + ".");
+        }
+        paragraphs.push(sentences.join(" "));
+      }
+      return paragraphs;
+    }
+
+    async function displayTextWithDelay(text, container) {
+      container.textContent = "";
+      for (const word of text.split(" ")) {
+        container.textContent += word + " ";
+        await new Promise((resolve) => setTimeout(resolve, 100));
+      }
+    }
+
+    document.getElementById("generate").addEventListener("click", () => {
+      const wordsPerSentence = parseInt(document.getElementById("wordsPerSentence").value, 10);
+      const sentencesPerParagraph = parseInt(document.getElementById("sentencesPerParagraph").value, 10);
+      const paragraphCount = parseInt(document.getElementById("paragraphs").value, 10);
+
+      const loremTextArray = generateLoremIpsum(wordsPerSentence, sentencesPerParagraph, paragraphCount);
+      const outputContainer = document.getElementById("output");
+
+      (async () => {
+        for (const paragraph of loremTextArray) {
+          await displayTextWithDelay(paragraph, outputContainer);
+          outputContainer.textContent += "\n\n"; // Add space between paragraphs
+        }
+      })();
+    });
+
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.remove("hidden");
+  toast.classList.add("visible");
+
+  // Hide the toast after 3 seconds
+  setTimeout(() => {
+    toast.classList.remove("visible");
+    toast.classList.add("hidden");
+  }, 3000);
+}
+
+document.getElementById("copy-btn").addEventListener("click", () => {
+  const outputText = document.getElementById("output").textContent;
+
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(outputText)
+      .then(() => showToast("Text copied to clipboard!"))
+      .catch((err) => showToast("Failed to copy text: " + err));
+  } else {
+    const textarea = document.createElement("textarea");
+    textarea.value = outputText;
+    textarea.style.position = "fixed";
+    textarea.style.opacity = 0;
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    try {
+      document.execCommand("copy");
+      showToast("Text copied to clipboard!");
+    } catch (err) {
+      showToast("Failed to copy text: " + err);
+    }
+    document.body.removeChild(textarea);
+  }
+});
+
+
+
+    // Populate dropdowns with default values
+    populateSelectOptions("wordsPerSentence", 1, 50, 8);
+    populateSelectOptions("sentencesPerParagraph", 1, 50, 5);
+    populateSelectOptions("paragraphs", 1, 50, 1);
+
+    // Generate default Lorem Ipsum on page load
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("generate").click();
+    });
+  </script>
+</body>
+</html>
