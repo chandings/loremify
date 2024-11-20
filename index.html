@@ -236,7 +236,8 @@
       }
     }
 
-    function generateLoremIpsum(wordsPerSentence, sentencesPerParagraph, paragraphCount) {
+    function generateLoremIpsum(wordsPerSentence, sentencesPerParagraph) {
+      const paragraphCount = 1;
       const paragraphs = [];
       for (let p = 0; p < paragraphCount; p++) {
         const sentences = [];
