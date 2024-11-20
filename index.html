@@ -191,10 +191,10 @@
         <label for="sentencesPerParagraph">Sentences per paragraph:</label>
         <select id="sentencesPerParagraph"></select>
       </div>
-<!--       <div class="form-group">
+      <div class="form-group">
         <label for="paragraphs">Number of paragraphs:</label>
-        <select id="paragraphs"></select>
-      </div> -->
+        <select disabled="true" id="paragraphs"></select>
+      </div>
       <button id="generate">Generate Lorem Ipsum</button>
       <h2>Generated Text:</h2>
       <div id="generated-text-container">
@@ -236,8 +236,7 @@
       }
     }
 
-    function generateLoremIpsum(wordsPerSentence, sentencesPerParagraph) {
-      const paragraphCount = 1;
+    function generateLoremIpsum(wordsPerSentence, sentencesPerParagraph, paragraphCount) {
       const paragraphs = [];
       for (let p = 0; p < paragraphCount; p++) {
         const sentences = [];
